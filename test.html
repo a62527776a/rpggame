@@ -1,0 +1,34 @@
+<!--<body></body>
+<script src="./map.js"></script>
+<script src="./person.js"></script>
+<script>
+let map = new Map(9,9,25);
+let body = document.getElementsByTagName('body')[0];
+let direction = '';
+let coordinate = '';
+let gameover = false;
+let timer;
+let snake = new Snake(0,0);
+let coor_list;
+//let qqqqq = {
+//    x:[1],
+//    y:[1]
+//}
+//console.log(qqqqq);
+body.addEventListener('keydown', (e) => {
+    direction = snake.dir_fun(e.keyCode);//传键值改变方向
+})
+map.createMap();
+map.drawPoint();
+timer = setInterval(() => {
+    if(!gameover){
+        coordinate = snake.coordinate(direction.toString());  //传方向改变坐标
+        coor_list = snake.move();
+        map.drawPoint(coor_list);
+    } else {
+        clearInterval(timer);
+    }
+    
+},500)
+console.log(gameover);
+</script>-->
